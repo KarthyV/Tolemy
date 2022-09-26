@@ -30,39 +30,48 @@ isNaN("abcd"); // returns true because even though coercion takes place it's not
 isNaN("51"); // returns false, because coercion happens and "51" will be converted as 51 which is a number
 ```
 
-## Difference between NaN and Number.isNaN()
+## Difference between is.NaN() and Number.isNaN()
 
 1. `isNaN()` function converts the argument to a number and returns true if the value is NaN
 2. `Number.isNaN` function checks the argument type if its number and the value is equal to NaN.
 
-| Value(x)         | isNaN(x) | Number.isNaN() |
-| ---------------- | -------- | -------------- |
-| NaN              | true     | true           |
-| undefined        | true     | false          |
-| {}               | false    | false          |
-| []               | false    | false          |
-| ""               | true     | false          |
-| '123'            | false    | false          |
-| '123e'           | true     | false          |
-| parseInt('123e') | false    | false          |
+| Value(x)         | isNaN(x) | Number.isNaN(x) |
+| ---------------- | -------- | --------------- |
+| NaN              | true     | true            |
+| undefined        | true     | false           |
+| {}               | false    | false           |
+| []               | false    | false           |
+| ""               | true     | false           |
+| '123'            | false    | false           |
+| '123e'           | true     | false           |
+| parseInt('123e') | false    | false           |
 
 Behind the Scenes
 
 ```js
-function isNaN(x) {
-    return Number(x); // returns a number
+function iSNaN(x) {
+  return Number(x) !== +x; // returns a boolean value
 }
-console.log(isNaN(NaN)) // NaN is not a number so prints true
-console.log(isNaN('123')) // '123' is converted as number so returns false
-console.log(isNaN(null)) // null itself is value which is not a number
 
-function Number.isNaN(x) {
-    if(typeof x === 'number' && Number(x)) {
-       return true
-    } else {
-        return false
-    }
+console.log(iSNaN(NaN)); // NaN is not a number so prints true
+
+console.log(iSNaN("123")); // '123' is converted as number so returns false
+
+console.log(iSNaN(null)); // null is a falsy which is considered as 0
+
+console.log(iSNaN(true)); // true is a truthy value which is considered as 1 in this case
+
+function NumberIsNaN(x) {
+  const number = Number(x);
+
+  if (typeof x === "number" && isFinite(number)) {
+    return true;
+  } else {
+    return false;
+  }
 }
-console.log(isNaN(NaN)) // type of NaN is number and value is not a number so prints true
-console.log(isNaN('123')) // even though the '123' is converted to number but the initial data type of the value is not an number so it returns false
+
+console.log(NumberIsNaN(NaN)); // type of NaN is number and value is not a number so prints true
+
+console.log(NumberIsNaN("123")); // even though the '123' is converted to number but the initial data type of the value is not an number so it returns false
 ```

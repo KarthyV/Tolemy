@@ -77,6 +77,16 @@
 
 ---
 
+6. **map**
+   - map is a ES6 feature which provides a new array taking a function statement for iteration
+   ```js
+   var array = [1, 2, 3, 4];
+   var arrayCopy = array.map((num) => num);
+   console.log(arrayCopy); // returns [1,2,3,4]
+   ```
+
+---
+
 # On objects
 
 1. **Object.assign**

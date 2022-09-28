@@ -64,7 +64,7 @@ console.log(iSNaN(true)); // true is a truthy value which is considered as 1 in 
 function NumberIsNaN(x) {
   const number = Number(x);
 
-  if (typeof x === "number" && !Number(x)) {
+  if (typeof x === "number" && !Number(x) && x !== 0 && x !== -0) {
     return true;
   } else {
     return false;

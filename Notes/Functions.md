@@ -6,6 +6,15 @@
   - It can be passed as an value
   - It can be returned as an value
 
+## Types of functions
+
+- Normal functions
+- Anonymous Functions
+- Arrow functions
+- IIFE functions
+
+---
+
 ## Function currying
 
 - Function currying is something where a function is kept as base and with that as reference more instance of functions are built.
@@ -32,3 +41,23 @@ function greet() {
 
 greet()(); // returns Hello
 ```
+
+---
+
+## Compose & Pipe format using fn composition
+
+```js
+const double = (x) => x * 2;
+const sqr = (x) => x * x;
+
+const pipe = (fn1, fn2, x) => fn2(fn1(x)); // Execution pattern
+
+const compose = (fn1, fn2, x) => fn1(fn2(x)); // Execution pattern
+```
+
+## IIFE - Immediately Invoked function expression
+
+- IIFE is used to shadowing global variables to avoid name clash.
+- It's a block scope
+
+Declarative vs Imperative

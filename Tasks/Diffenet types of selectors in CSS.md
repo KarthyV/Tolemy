@@ -3,6 +3,7 @@
 > ## Universal Selector - (`*`)
 >
 > The asterisk symbol is a type of selector which selects `all` the elements of any type.
+> specificity value (0,0,0)
 >
 > ```css
 > * {
@@ -15,7 +16,7 @@
 > ## Type Selector (or) Element Selector
 >
 > The selector which allows you to match elements by `node name` (or) `tag name` is known as type selector
->
+>specificity value (0,0,1)
 > ```css
 > p {
 >   /* This type will select all p tags in the document */
@@ -30,7 +31,7 @@
 > - class selectors matches elements based on the name value given inside the html class attribute
 > - A dot as to be added in front of that name for accessing
 > - Widely used and recommended
->
+> specificity value (0,1,0)
 > ```css
 > .testing {
 >   /* <p class="testing">Hello</p>
@@ -46,7 +47,7 @@
 > - Id selectors matches elements based on the name value given inside the html id attribute
 > - Accessed by using a `#` in front of the name value
 > - Can be used only in a unique manner,Not highly recommended
->
+> specificity value (1,0,0)
 > ```css
 > #testing {
 >   /* <p id="testing">Hello</p>
@@ -60,7 +61,7 @@
 > ## Attribute Selectors
 >
 > - This CSS selector selects elements based on their presence or value given inside the attribute.
->
+>  specificity value (0,1,1)
 > ```css
 > a[href="example.com"] {
 >   ...;
@@ -100,7 +101,7 @@
 > > ### Child combinator
 > >
 > > The `>` selects all the direct child element of the parent element
-> >
+> > if div > .class - specificity value (0,1,1)
 > > ```css
 > > div > span {...} /* This matches all span element of div tag which are directly a child
 > > ```
@@ -111,7 +112,7 @@
 > >
 > > - The `+` separators two elements were the second element is a followup of the first element
 > > - For the above condition, both element must be under same parent element
-> >
+> > specificity value (0,0,2)
 > > ```css
 > > img + p {
 > >   ...;
@@ -123,7 +124,7 @@
 > # Pseudo Classes
 >
 > Pseudo Classes lets you apply a style to an element not only when its in DOM tree but can also add styles based on user interactions
->
+> specificity value (0,2,0) if combined with classname. (0,1,1) with element
 > ```css
 > a:hover {
 >   ...;
@@ -179,7 +180,7 @@
 ---
 
 > # Pseudo Elements
->
+> specificity value (0,0,2)
 > A pseudo element is a keyword added to a selector that lets style a specific part of the selected element which is not originally present in the DOM
 >
 > ```css

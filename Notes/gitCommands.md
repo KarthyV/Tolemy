@@ -43,5 +43,5 @@
    - If the branchname does not exist, it will be created.
 9. **git commit --amend**
    - For changing the commit message.
-10. **git merger (branchname)**
+10. **git merge (branchname)**
     - Merges the branch files with the main branch on what it was called on.

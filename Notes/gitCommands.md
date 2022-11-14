@@ -43,5 +43,18 @@
    - If the branchname does not exist, it will be created.
 9. **git commit --amend**
    - For changing the commit message.
-10. **git merger (branchname)**
+10. **git merge (branchname)**
     - Merges the branch files with the main branch on what it was called on.
+11. **git switch (branchname)**
+    - Alternate for checkout.
+12. **git branch -D (branchname)**
+    - deletes the particular branch name.
+13. **git merge -continue**
+    - If there is conflict, `resolve` and stage the files `(add)` at last give `git merge --continue`.
+14. **git rebase branch**
+    - Gives the most recent main branch codes and merges with your available local branch.
+    - If there is conflict, `resolve` and stage the files `(add)` at last give `git rebase --continue`.
+15. **git push origin (branchname)**
+    - After committing the changes, pushing the changes to online.
+16. **git stash**
+    - Keeping a local copy

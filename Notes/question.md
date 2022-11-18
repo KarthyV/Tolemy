@@ -2,7 +2,7 @@
 
 ## 1) What is the difference between Promise.all() vs Promise.allSettled()? Explain with an example.
 
-Promise.all() waits for all promises inside to get resolved, even if one promise gets rejected the it stops there and returns the error, and Promise.allSettled() waits for all the promises to get executed even if its in rejected state.
+Promise.all() waits for all promises inside to get resolved, even if one promise gets rejected then it stops there and returns the error, and Promise.allSettled() waits for all the promises to get executed even if its in rejected state.
 
 ```js
 const promise1 = Promise.resolve(5);
